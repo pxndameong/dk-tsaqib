@@ -16,9 +16,8 @@ PilihTahun = 1987  # PILIH TAHUN
 for PilihBulan in range(1 , 13): #PILIH BULAN RANGE
     print(f"\nProcessing Month {PilihBulan} Year {PilihTahun}")
     
-    maenya=0.8 
-    
-    persentotaldata= 1
+    #maenya=0.8 
+    persentotaldata= 1 #RANGE % STASIUN (0.0 - 1.0)
     angkapersendata = persentotaldata*100
     templatesample = f"51var_{angkapersendata}%_stasiun"
 
@@ -27,7 +26,7 @@ for PilihBulan in range(1 , 13): #PILIH BULAN RANGE
     
     namaFolderEksogen = '\ERA5\\' #FOLDER_EKSOGEN
 
-    folder_save_hasil = "\FOLDER SIMPAN\\" #isi folder simpan
+    folder_save_hasil = "\FOLDER SIMPAN\\" #FOLDER FILE DISIMPAN SAVE PNG, SAVE HASIL
     output_dir_png = folder_save_hasil
 
     kolom_terpilih = [ #pilih variabel kolom dari file /ERA5/
