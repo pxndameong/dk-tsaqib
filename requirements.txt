@@ -1,0 +1,8 @@
+pandas
+keras
+numpy
+scipy
+geopandas
+contextily
+matplotlib
+shapely
