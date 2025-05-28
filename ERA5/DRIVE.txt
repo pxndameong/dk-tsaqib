@@ -1,1 +1,5 @@
+PATH
+/ERA5/file1, file2, file3,... file
+
+file unduh dari sini
 https://drive.google.com/drive/folders/1R6bRO_7pMuCrSwzwsEjruUBUU5tGEhBz?usp=sharing
