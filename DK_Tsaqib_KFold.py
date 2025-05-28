@@ -11,21 +11,26 @@ import os
 from shapely.geometry import box
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
-#ISI CUSTOM
+######################## ISI CUSTOM ###############################3
 PilihTahun = 1987  # PILIH TAHUN
-for PilihBulan in range(1 , 13):
+for PilihBulan in range(1 , 13): #PILIH BULAN RANGE
     print(f"\nProcessing Month {PilihBulan} Year {PilihTahun}")
     
-    maenya=0.8
+    maenya=0.8 
     
     persentotaldata= 1
     angkapersendata = persentotaldata*100
     templatesample = f"51var_{angkapersendata}%_stasiun"
 
-    folder_save_hasil = "C:\FILE\PROYEK PROF EDDY\DATA\DK_MERGE_TSAQIB/1 YEAR/"
+    namafolder = '\CH\\' #CH_HUJAN
+    namafile = "sum_bulanan_rainfall.txt"
+    
+    namaFolderEksogen = '\ERA5\\' #FOLDER_EKSOGEN
+
+    folder_save_hasil = "\FOLDER SIMPAN\\" #isi folder simpan
     output_dir_png = folder_save_hasil
 
-    kolom_terpilih = [
+    kolom_terpilih = [ #pilih variabel kolom dari file /ERA5/
     "lat", "lon", "cape", "hcc", "mcc", "msl", "slhf", "sshf", "t2m", "tclw", "tcwv",
     "q_1000", "q_925", "q_850", "q_600", "q_500", "q_200",
     "r_1000", "r_925", "r_850", "r_600", "r_500", "r_200",
@@ -35,6 +40,8 @@ for PilihBulan in range(1 , 13):
     "w_1000", "w_925", "w_850", "w_600", "w_500", "w_200", "w_700", "w_650",
     "vimfc", "tp_sum", "ivt", "tcrw", "olr"
 ]
+###################################################################################
+    
     # OTOMATIS
     try:
         K.clear_session()
@@ -45,9 +52,6 @@ for PilihBulan in range(1 , 13):
         ##########################################
         # Baca data observasi
         ##########################################
-        namafolder = 'C:\FILE\PROYEK PROF EDDY\CURAH HUJAN DATA PAK YANTO\FIX TERBARU REVISI 2025/' #CH_HUJAN
-        namaFolderEksogen = 'C:\\FILE\\PROYEK PROF EDDY\\DATA\\DATA ERA 5\\DOWNLOAD BULANAN (1985-2024)\\HASIL SIAP UPLOAD' #FOLDER_EKSOGEN
-        namafile = "sum_bulanan_rainfall.txt"
         datasinloc = os.path.join(namafolder, namafile)
         dfch = pd.read_csv(datasinloc, sep="\t")
         dfchnonnan = dfch[~dfch["monthly_rainfall"].isna()]
